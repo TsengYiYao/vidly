@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
@@ -25,10 +22,10 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
-            var membershipType = _context.MembershipTypes.ToList();
+            var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
-                MembershipTypes = membershipType
+                MembershipTypes = membershipTypes
             };
 
             return View("CustomerForm", viewModel);
@@ -37,18 +34,17 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)
         {
-            if(customer.Id == 0)
-            {
+            if (customer.Id == 0)
                 _context.Customers.Add(customer);
-            }
             else
             {
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
                 customerInDb.Name = customer.Name;
                 customerInDb.Birthdate = customer.Birthdate;
-                customerInDb.MembershipType = customer.MembershipType;
-                customerInDb.IsSubscirbedToNewsletter = customer.IsSubscirbedToNewsletter;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
             }
+
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Customers");
@@ -74,7 +70,7 @@ namespace Vidly.Controllers
         public ActionResult Edit(int id)
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
-            
+
             if (customer == null)
                 return HttpNotFound();
 
@@ -83,9 +79,8 @@ namespace Vidly.Controllers
                 Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
+
             return View("CustomerForm", viewModel);
         }
     }
-
-    
 }
