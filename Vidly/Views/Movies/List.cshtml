@@ -17,16 +17,8 @@
             <th>Delete</th>
         </tr>
     </thead>
-    @*<tbody>
-            @foreach (var movie in Model)
-            {
-                <tr>
-                    <td>@Html.ActionLink(movie.Name, "Edit", "Movies", new {id = movie.Id}, null)</td>
-                    <td>@movie.Genre.Name</td>
-                    <td>Delete</td>
-                </tr>
-            }
-        </tbody>*@
+    <tbody>
+    </tbody>
 </table>
 @section scripts
 {
@@ -49,12 +41,13 @@
                     },
                     {
                         data: "id",
-                        render: function (data) {
+                        render: function(data) {
                             return "<button class='btn-link js-delete' data-movie-id=" + data + ">Delete</button>";
                         }
                     }
                 ]
             });
+
 
             $("#movies").on("click", ".js-delete", function () {
                 var button = $(this);
@@ -73,5 +66,4 @@
             });
         });
     </script>
-
 }
