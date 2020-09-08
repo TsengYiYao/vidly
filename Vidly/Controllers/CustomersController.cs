@@ -65,7 +65,9 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
-             return View();
+            var customers = _context.Customers.ToList();
+
+             return View(customers);
         }
 
         public ActionResult Details(int id)
