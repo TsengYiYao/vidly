@@ -46,9 +46,9 @@ namespace Vidly
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "b9ee98e7-e3c0-4788-a945-0d956dbb4e24",
+                clientSecret: "0EhY~0H-4sSi2h6P_oW2jt97DM_yfx_nll");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
