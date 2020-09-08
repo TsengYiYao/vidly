@@ -74,7 +74,7 @@ namespace Vidly.Models
     {
         [Required]
         [Display(Name = "Phone")]
-        public string Phoen { get; set; }
+        public string Phone { get; set; }
 
         [Required]
         [Display(Name = "Driving License")]
