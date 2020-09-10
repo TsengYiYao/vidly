@@ -253,6 +253,10 @@
     <Compile Include="Migrations\202009100313496_AddRentals.Designer.cs">
       <DependentUpon>202009100313496_AddRentals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009100515183_AddNumberAvailable.cs" />
+    <Compile Include="Migrations\202009100515183_AddNumberAvailable.Designer.cs">
+      <DependentUpon>202009100515183_AddNumberAvailable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -568,6 +572,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009100313496_AddRentals.resx">
       <DependentUpon>202009100313496_AddRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009100515183_AddNumberAvailable.resx">
+      <DependentUpon>202009100515183_AddNumberAvailable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
