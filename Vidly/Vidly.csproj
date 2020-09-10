@@ -180,6 +180,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\NewRentalsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
+    <Compile Include="Dtos\NewRentalDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -247,6 +249,10 @@
     <Compile Include="Migrations\202009070914449_AddPhoneToApplicationUser.Designer.cs">
       <DependentUpon>202009070914449_AddPhoneToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009100313496_AddRentals.cs" />
+    <Compile Include="Migrations\202009100313496_AddRentals.Designer.cs">
+      <DependentUpon>202009100313496_AddRentals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -255,6 +261,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -507,6 +514,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\NewRentals\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -557,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009070914449_AddPhoneToApplicationUser.resx">
       <DependentUpon>202009070914449_AddPhoneToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009100313496_AddRentals.resx">
+      <DependentUpon>202009100313496_AddRentals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
